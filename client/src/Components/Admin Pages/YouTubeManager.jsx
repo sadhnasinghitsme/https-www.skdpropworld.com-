@@ -231,7 +231,12 @@ const YouTubeManager = () => {
             </Button>
             <Button 
               variant="primary" 
-              onClick={handleAddVideo}
+              onClick={(e) => {
+                console.log('🔘 Add button clicked!');
+                console.log('Form data:', newVideo);
+                console.log('Button disabled?', !newVideo.title || !newVideo.url);
+                handleAddVideo();
+              }}
               disabled={!newVideo.title || !newVideo.url}
             >
               Add

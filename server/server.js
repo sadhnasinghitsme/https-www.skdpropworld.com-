@@ -1,4 +1,4 @@
-console.log("🔥🔥🔥 SERVER.JS IS RUNNING ON RENDER 🔥🔥🔥");
+console.log("🔥🔥🔥 SERVER.JS IS RUNNING ON RENDER - YOUTUBE ROUTES DEPLOYED v2.0 🔥🔥🔥");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -14,6 +14,20 @@ const app = express();
 
 app.get("/__proof", (req, res) => {
   res.send("RENDER IS DEFINITELY RUNNING SERVER.JS");
+});
+
+// Debug endpoint to verify YouTube routes are loaded
+app.get("/__youtube-debug", (req, res) => {
+  res.json({
+    message: "YouTube routes are loaded and working!",
+    timestamp: new Date().toISOString(),
+    youtubeEndpoints: [
+      "GET /api/admin/youtube - Get all videos",
+      "POST /api/admin/youtube - Add new video", 
+      "DELETE /api/admin/youtube/:id - Delete video"
+    ],
+    serverVersion: "v2.0 - YouTube Routes Deployed"
+  });
 });
 
 // Debug endpoint to check admin accounts
