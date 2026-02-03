@@ -19,9 +19,23 @@ const YouTubeManager = () => {
 
   // Function to extract video ID from YouTube URL
   const getYoutubeId = (url) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
+    if (!url) return null;
+    
+    // Handle different YouTube URL formats
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^#&?]*)/,
+      /youtube\.com\/v\/([^#&?]*)/,
+      /youtube\.com\/user\/[^\/]*#[^\/]*\/[^\/]*\/[^\/]*\/([^#&?]*)/
+    ];
+    
+    for (let pattern of patterns) {
+      const match = url.match(pattern);
+      if (match && match[1] && match[1].length === 11) {
+        return match[1];
+      }
+    }
+    
+    return null;
   };
 
   // Function to get YouTube thumbnail URL
@@ -51,26 +65,63 @@ const YouTubeManager = () => {
 
   const handleAddVideo = async () => {
     try {
-      const { title, url } = newVideo;
-      if (!title || !url) return toast.error("Title and URL are required");
+      const { title, url, description } = newVideo;
+      console.log('🔍 Adding video:', { title, url, description });
+      
+      // Validate required fields
+      if (!title || !title.trim()) {
+        console.error('❌ Missing title');
+        return toast.error("Title is required");
+      }
+      
+      if (!url || !url.trim()) {
+        console.error('❌ Missing URL');
+        return toast.error("YouTube URL is required");
+      }
 
-      // Convert regular YouTube URL to embed URL if needed
+      // Extract video ID and create proper embed URL
+      let videoId = getYoutubeId(url);
+      if (!videoId) {
+        console.error('❌ Invalid YouTube URL');
+        return toast.error("Please enter a valid YouTube URL");
+      }
+
+      // Create video data object
       const videoData = {
-        ...newVideo,
-        // If it's not already an embed URL, convert it
-        url: url.includes('youtube.com/embed/') ? url : 
-             `https://www.youtube.com/embed/${getYoutubeId(url) || ''}`,
-        // Add thumbnail if not provided
-        thumbnail: newVideo.thumbnail || getYoutubeThumbnail(url)
+        title: title.trim(),
+        url: `https://www.youtube.com/embed/${videoId}`,
+        description: description?.trim() || '',
+        thumbnail: getYoutubeThumbnail(url)
       };
 
-      const res = await axios.post(API ? `${API}/api/admin/youtube` : '/api/admin/youtube', videoData);
+      console.log('🚀 Sending video data:', videoData);
+      
+      // Determine API URL
+      const apiUrl = API ? `${API}/api/admin/youtube` : '/api/admin/youtube';
+      console.log('📡 API URL:', apiUrl);
+
+      // Make API request
+      const res = await axios.post(apiUrl, videoData);
+      console.log('✅ Video added successfully:', res.data);
+      
+      // Update state and close modal
       setVideos((prev) => [res.data, ...prev]);
       setShowModal(false);
       setNewVideo({ title: "", url: "", description: "", thumbnail: "" });
-      toast.success("Video added");
-    } catch {
-      toast.error("Failed to add video");
+      toast.success("Video added successfully!");
+      
+    } catch (error) {
+      console.error('❌ Error adding video:', error);
+      console.error('Error response:', error.response?.data);
+      
+      let errorMessage = "Failed to add video";
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
+      toast.error(errorMessage);
     }
   };
 
@@ -148,6 +199,7 @@ const YouTubeManager = () => {
                   onChange={(e) =>
                     setNewVideo({ ...newVideo, title: e.target.value })
                   }
+                  placeholder="Enter video title"
                 />
               </Form.Group>
               <Form.Group className="mt-3">
@@ -157,7 +209,7 @@ const YouTubeManager = () => {
                   onChange={(e) =>
                     setNewVideo({ ...newVideo, url: e.target.value })
                   }
-                  placeholder="e.g. https://www.youtube.com/embed/abc123"
+                  placeholder="e.g. https://www.youtube.com/watch?v=abc123 or https://www.youtube.com/embed/abc123"
                 />
               </Form.Group>
               <Form.Group className="mt-3">
@@ -177,7 +229,11 @@ const YouTubeManager = () => {
             <Button variant="secondary" onClick={() => setShowModal(false)}>
               Cancel
             </Button>
-            <Button variant="primary" onClick={handleAddVideo}>
+            <Button 
+              variant="primary" 
+              onClick={handleAddVideo}
+              disabled={!newVideo.title || !newVideo.url}
+            >
               Add
             </Button>
           </Modal.Footer>
