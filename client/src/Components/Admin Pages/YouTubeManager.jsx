@@ -15,7 +15,7 @@ const YouTubeManager = () => {
     thumbnail: "",
   });
 
-  const API = import.meta.env.VITE_API_BASE_URL;
+  const API = import.meta.env.VITE_API_BASE_URL || '';
 
   // Function to extract video ID from YouTube URL
   const getYoutubeId = (url) => {
@@ -32,7 +32,7 @@ const YouTubeManager = () => {
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get(`${API}/api/admin/youtube`);
+      const res = await axios.get(API ? `${API}/api/admin/youtube` : '/api/admin/youtube');
       // Add thumbnail URL to each video
       const videosWithThumbnails = res.data.map(video => ({
         ...video,
@@ -64,7 +64,7 @@ const YouTubeManager = () => {
         thumbnail: newVideo.thumbnail || getYoutubeThumbnail(url)
       };
 
-      const res = await axios.post(`${API}/api/admin/youtube`, videoData);
+      const res = await axios.post(API ? `${API}/api/admin/youtube` : '/api/admin/youtube', videoData);
       setVideos((prev) => [res.data, ...prev]);
       setShowModal(false);
       setNewVideo({ title: "", url: "", description: "", thumbnail: "" });
@@ -75,7 +75,7 @@ const YouTubeManager = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`${API}/api/admin/youtube/${id}`);
+    await axios.delete(API ? `${API}/api/admin/youtube/${id}` : `/api/admin/youtube/${id}`);
     setVideos((prev) => prev.filter((v) => v._id !== id));
     toast.success("Deleted");
   };
