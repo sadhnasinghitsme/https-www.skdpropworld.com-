@@ -16,8 +16,29 @@ app.get("/__proof", (req, res) => {
   res.send("RENDER IS DEFINITELY RUNNING SERVER.JS");
 });
 
-// Server configuration - Use environment PORT or fallback to 10000 for Render
-const PORT = process.env.PORT || 10000;
+// Debug endpoint to check admin accounts
+app.get("/__debug-admin", async (req, res) => {
+  try {
+    const Admin = require("./models/Admin");
+    const adminCount = await Admin.countDocuments();
+    const admins = await Admin.find({}, { email: 1, _id: 1 }); // Only return email and ID, not password
+    res.json({
+      message: "Admin Debug Info",
+      totalAdmins: adminCount,
+      adminEmails: admins.map(admin => admin.email),
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.json({
+      error: "Could not fetch admin info",
+      message: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+// Server configuration - Use environment PORT or fallback to 3003 for development, 10000 for Render
+const PORT = process.env.PORT || (process.env.NODE_ENV === 'production' ? 10000 : 3003);
 const prerender = require("prerender-node");
 prerender.set("prerenderToken", "QHhhrvIPvM5gm4fHnmaT");
 app.use((req, res, next) => {
