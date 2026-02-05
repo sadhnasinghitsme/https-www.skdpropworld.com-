@@ -12,7 +12,7 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | SKD Propworld - Global Real Estate Experts</title>
+        <title>About SKD Propworld - Top Real Estate Agents in Graeter Noida & YEIDA</title>
         <meta
           name="description"
           content="Learn about SKD Propworld — a trusted global real estate leader offering investment advisory, sales, and relocation services across India (Noida, Greater Noida, YEIDA, Delhi, Ghaziabad, New Delhi, Delhi NCR), USA, UK, UAE, Singapore, and Canada."
@@ -22,7 +22,7 @@ const AboutUs = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="About SKD Propworld | Real Estate Advisors & Experts"
+          content="About SKD Propworld | Real Estate Agents "
         />
         <meta
           property="og:description"
@@ -44,8 +44,8 @@ const AboutUs = () => {
       <div className="aboutus-page">
         <section className="aboutus-hero-section text-center d-flex align-items-center justify-content-center">
           <div className="container">
-            <h1 className="display-4 fw-bold">About Us</h1>
-            <p className="lead">Your trusted partner in global real estate</p>
+            <h1 className="display-4 fw-bold">Top Real Estate Agents in Greater Noida & YEIDA</h1>
+            <p className="lead">SKD Propworld is one of the top real estate consultants in Greater Noida and YEIDA, offering trusted property solutions for residential and commercial investments.</p>
           </div>
         </section>
 
@@ -59,31 +59,58 @@ const AboutUs = () => {
           <div className="who-we-are-overlay"></div>
           <div className="container position-relative">
             <h2 className="mb-4 text-center fw-bold text-white">Who We Are</h2>
-            <p className="lead text-justify text-white">
-              At <strong>SKD Propworld</strong>, we work as a professional real estate agent 
-              and property consultant in Greater Noida, specializing in residential and commercial 
-              properties,including verified YEIDA plots along the Yamuna Expressway.
-              <br />
-              <br />
-               As a trusted property dealer in Greater Noida, we provide clear, reliable,
-              and transparent real estate services for buyers and investors interested in
-            YEIDA residential plots and high-growth investment zones. Our team focuses on
-            accurate information, smooth documentation support, and personalized guidance
-             to help clients make confident property decisions.
+            
+            <div className="lead text-justify text-white">
+              <p>
+                <strong>SKD Propworld</strong> is one of the trusted real estate consultants in Greater Noida and YEIDA, 
+                providing professional property consultancy services for residential and commercial projects. We specialize 
+                in helping clients buy, sell, and invest in the best properties across Greater Noida and Yamuna 
+                Expressway Industrial Development Authority (YEIDA) areas.
+              </p>
 
-           With strong local expertise in YEIDA sectors and years of experience since 2011,
-          we assist clients looking to buy residential plots, invest in commercial or
-          industrial spaces, or explore long-term opportunities near the upcoming
-          Noida International Airport (Jewar Airport).
+              <h3 className="fw-bold text-warning mt-4 mb-3">Our Mission</h3>
+              <p>
+                As a trusted name among the <strong>property dealers in YEIDA</strong>, we focus on customer 
+                satisfaction, market knowledge, and long-term relationships. Our mission is to make property buying 
+                simple, safe, and profitable for every client.
+              </p>
 
+              <h3 className="fw-bold text-warning mt-4 mb-3">Our Expertise in Greater Noida & YEIDA</h3>
+              <p>
+                With years of experience in the real estate market, SKD Propworld has earned a reputation as one of 
+                the <strong>best property consultants in Greater Noida</strong> for offering transparent deals, expert 
+                guidance, and personalized customer service.
+              </p>
+              <p>
+                Our team of professional property advisors works closely with leading builders and developers to 
+                bring you verified projects, legal assistance, and end-to-end support. Whether you are looking for 
+                luxury apartments, plots, villas, or commercial spaces, we ensure you get the best options at the best price.
+              </p>
 
+              <h3 className="fw-bold text-warning mt-4 mb-3">Why Choose SKD Propworld</h3>
+              <p className="mb-2">Best Property Consultants in Greater Noida & YEIDA:</p>
+              <ul className="list-unstyled ps-3">
+                <li className="mb-2">✓ Expert knowledge of Greater Noida and YEIDA property market</li>
+                <li className="mb-2">✓ Verified and approved projects</li>
+                <li className="mb-2">✓ Honest pricing and transparent documentation</li>
+                <li className="mb-2">✓ Dedicated customer support</li>
+                <li className="mb-2">✓ Proven track record of satisfied clients</li>
+              </ul>
 
-              <br />
-              <br />
-              SKD PropWorld is committed to delivering trustworthy real estate consultation
-              and end-to-end support, making us a reliable choice for anyone seeking a
-              real estate agent in Greater Noida with proven YEIDA market knowledge.
-            </p>
+              <h3 className="fw-bold text-warning mt-4 mb-3">Our Service Areas</h3>
+              <p className="mb-3">
+                <strong>Serving Greater Noida, YEIDA & Yamuna Expressway, Uttar Pradesh</strong>
+              </p>
+              <p>
+                We provide comprehensive real estate services across the entire Yamuna Expressway corridor, 
+                including all YEIDA sectors and Greater Noida regions. Our local expertise covers residential 
+                and commercial properties from Noida Extension to the upcoming Jewar Airport area.
+              </p>
+              
+              <p className="fw-semibold mt-4">
+                At SKD Propworld, we believe in delivering value, trust, and excellence in every real estate transaction.
+              </p>
+            </div>
           </div>
         </section>
 
