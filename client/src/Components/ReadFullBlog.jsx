@@ -287,6 +287,33 @@ const ReadFullBlog = () => {
                 </div>
               )}
             </ErrorBoundary>
+
+            {/* FAQ LINK SECTION */}
+            <div className="readblog-faq-section" style={{
+              background: '#f8f9fa',
+              padding: '20px',
+              borderRadius: '8px',
+              margin: '30px 0',
+              textAlign: 'center',
+              border: '1px solid #e9ecef'
+            }}>
+              <p style={{
+                margin: '0',
+                fontSize: '1.1rem',
+                color: '#495057'
+              }}>
+                Have questions about buying property? <a 
+                  href="https://www.skdpropworld.com/faq" 
+                  style={{
+                    color: '#ffc107',
+                    textDecoration: 'underline',
+                    fontWeight: '600'
+                  }}
+                >
+                  Read our FAQ on top real estate agents in Greater Noida & YEIDA.
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* SUGGESTED BLOGS PANEL */}

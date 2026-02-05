@@ -478,6 +478,7 @@ const Homepage = () => {
             </p>
             <p style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
               We provide professional <a href="/services" style={{ color: '#ffc107', textDecoration: 'underline' }}>real estate consultation services</a> for buyers and investors in Greater Noida.
+              Have questions? Check our <a href="https://www.skdpropworld.com/faq" style={{ color: '#ffc107', textDecoration: 'underline' }}>FAQ</a> to learn why we're the top choice for YEIDA properties.
             </p>
             <a href="/projects" style={{
               background: '#ffc107',
@@ -952,6 +953,7 @@ const Homepage = () => {
               </p>
               <p>
                 Contact our <a href="/contact-us">real estate team in Greater Noida</a> for personalized property guidance.
+                Have questions about our services? Check our <a href="https://www.skdpropworld.com/faq" style={{ color: '#ffc107', textDecoration: 'underline' }}>frequently asked questions</a> to learn why we're among the top real estate agents in Greater Noida & YEIDA.
               </p>
             </section>
 
@@ -981,6 +983,7 @@ const Homepage = () => {
                     </p>
                     <p>
                       Explore our <a href="/yeida-plots">YEIDA plots in Greater Noida</a> for long-term investment opportunities.
+                      Still have questions about investing in YEIDA? Visit our <a href="https://www.skdpropworld.com/faq" style={{ color: '#ffc107', textDecoration: 'underline' }}>FAQ section</a> to learn more about our real estate services.
                     </p>
 
                     <ul style={{ display: "none" }}>
@@ -1397,6 +1400,13 @@ const Homepage = () => {
                 borderBottom: '2px solid #ffc107',
                 transition: 'all 0.3s ease'
               }}>about us</a> and our commitment to providing exceptional real estate services in Greater Noida.
+              For common questions about our services, visit our <a href="https://www.skdpropworld.com/faq" style={{
+                color: '#ffc107',
+                textDecoration: 'none',
+                fontWeight: '600',
+                borderBottom: '2px solid #ffc107',
+                transition: 'all 0.3s ease'
+              }}>FAQ page</a>.
             </p>
             <p style={{
               color: '#495057',
