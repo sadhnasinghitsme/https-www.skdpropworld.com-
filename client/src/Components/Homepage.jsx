@@ -493,6 +493,33 @@ const Homepage = () => {
           </div>
         </div>
 
+        {/* Trust Line Section - Right after hero */}
+        <section style={{
+          background: '#f8f9fa',
+          padding: '40px 20px',
+          textAlign: 'center',
+          borderBottom: '1px solid #e9ecef'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: '2.2rem',
+              fontWeight: 'bold',
+              color: '#1a365d',
+              marginBottom: '15px'
+            }}>
+              Real Estate Solutions You Can Trust
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#4a5568',
+              margin: '0',
+              lineHeight: '1.6'
+            }}>
+              Trusted by clients as one of the <strong>top real estate agents in Greater Noida & YEIDA</strong> for residential and commercial investments.
+            </p>
+          </div>
+        </section>
+
         <section id="yeida-projects">
   <h2>YEIDA Project Highlights</h2>
   <div className="yeida-project-list">
