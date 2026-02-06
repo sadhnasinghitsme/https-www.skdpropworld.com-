@@ -469,10 +469,10 @@ const Homepage = () => {
           }}>
             {/* Primary, single H1 for homepage */}
             <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>
-              Real Estate Agent in Greater Noida
+              Top Real Estate Agents in Greater Noida - SKD Propworld
             </h1>
             <p style={{ fontSize: '1.5rem', marginBottom: '20px' }}>
-              SKD Prop World works as a trusted real estate agent and property consultant in Greater Noida,
+              SKD Prop World works as a best real estate agent and property consultant in Greater Noida,
               assisting clients with residential and commercial property transactions,
               including YEIDA plot investments.
             </p>

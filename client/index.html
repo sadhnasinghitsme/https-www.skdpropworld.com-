@@ -273,12 +273,34 @@
     </script>
   </head>
 <body>
-  <div id="root"></div>
-  <noscript>
-    <div style="text-align: center; padding: 20px; color: #ffffff">
-      This site requires JavaScript to function properly. Please enable it in your browser.
+  <div id="root">
+    <!-- Static content for SEO - will be replaced by React -->
+    <noscript>
+      <div style="text-align: center; padding: 20px; color: #ffffff">
+        This site requires JavaScript to function properly. Please enable it in your browser.
+      </div>
+    </noscript>
+    
+    <!-- Pre-rendered content for search engines - visible to crawlers, hidden visually -->
+    <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" id="seo-content" aria-hidden="true">
+      <h1>Top Real Estate Agents in Greater Noida - SKD Propworld</h1>
+      <p>SKD Prop World works as a trusted real estate agent and property consultant in Greater Noida, assisting clients with residential and commercial property transactions, including YEIDA plot investments.</p>
+      <h2>Real Estate Solutions You Can Trust</h2>
+      <p>Trusted by clients as one of the top real estate agents in Greater Noida & YEIDA for residential and commercial investments.</p>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Residential Plots in Greater Noida</li>
+        <li>Commercial Properties in YEIDA</li>
+        <li>YEIDA Approved Plots</li>
+        <li>Property Investment Consultation</li>
+        <li>Real Estate Advisory Services</li>
+      </ul>
+      <h2>Contact Information</h2>
+      <p>Phone: +91-9091010909</p>
+      <p>Email: info@skdpropworld.com</p>
+      <p>Address: 7th & 8th Floor, Kaisons Alpha Square, Alpha 1 Commercial Belt, Greater Noida, Uttar Pradesh, 201308, India</p>
     </div>
-  </noscript>
+  </div>
 
   <!-- Bootstrap JS Bundle (includes Popper) -->
   <script

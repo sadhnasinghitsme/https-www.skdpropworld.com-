@@ -12,7 +12,7 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About SKD Propworld - Top Real Estate Agents in Graeter Noida & YEIDA</title>
+        <title>About SKD Propworld - Top Real Estate Agents in Greater Noida & YEIDA</title>
         <meta
           name="description"
           content="Learn about SKD Propworld — a trusted global real estate leader offering investment advisory, sales, and relocation services across India (Noida, Greater Noida, YEIDA, Delhi, Ghaziabad, New Delhi, Delhi NCR), USA, UK, UAE, Singapore, and Canada."
