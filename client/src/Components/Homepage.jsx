@@ -1404,7 +1404,7 @@ const Homepage = () => {
             maxWidth: '900px',
             margin: '0 auto 20px auto'
           }}>
-            SKD Propworld acts as a professional real estate agent  for YEIDA,
+            SKD Propworld acts as a top  real estate agent  for YEIDA and Greater Noida
             helping buyers, NRI investors, and end-users understand location benefits,
             legal status, and future growth potential of each plot. Our in-depth YEIDA
             knowledge ensures you make confident and well-informed property decisions.
