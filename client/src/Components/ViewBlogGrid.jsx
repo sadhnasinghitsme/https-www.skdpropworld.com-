@@ -55,14 +55,14 @@ const ViewBlogGrid = () => {
       <>
         <Helmet>
         {/* Primary Meta Tags */}
-        <title>Latest Real Estate Blogs | Insights by SKD PropWorld</title>
+        <title>Real Estate Blogs | Best Real Estate Agents in Greater Noida & YEIDA</title>
         <meta
           name="title"
-          content="Latest Real Estate Blogs | Insights by SKD PropWorld"
+          content="Real Estate Blogs | Best Real Estate Agents in Greater Noida & YEIDA"
         />
         <meta
           name="description"
-          content="Stay updated with the latest trends, tips, and insights in real estate. Read expert blogs curated by SKD PropWorld."
+          content="Expert real estate blogs by the best real estate agents in Greater Noida and YEIDA. Get property tips, investment insights, and market updates."
         />
 
         {/* Open Graph / Facebook */}
@@ -70,11 +70,11 @@ const ViewBlogGrid = () => {
         <meta property="og:url" content="https://www.skdpropworld.com/blogs" />
         <meta
           property="og:title"
-          content="Latest Real Estate Blogs | Insights by SKD PropWorld"
+          content="Real Estate Blogs | Best Real Estate Agents in Greater Noida & YEIDA"
         />
         <meta
           property="og:description"
-          content="Stay updated with the latest trends, tips, and insights in real estate. Read expert blogs curated by SKD PropWorld."
+          content="Expert real estate blogs by the best real estate agents in Greater Noida and YEIDA. Get property tips, investment insights, and market updates."
         />
 
         {/* Twitter */}
@@ -82,16 +82,56 @@ const ViewBlogGrid = () => {
         <meta name="twitter:url" content="https://www.skdpropworld.com/blogs" />
         <meta
           name="twitter:title"
-          content="Latest Real Estate Blogs | Insights by SKD PropWorld"
+          content="Real Estate Blogs | Best Real Estate Agents in Greater Noida & YEIDA"
         />
         <meta
           name="twitter:description"
-          content="Stay updated with the latest trends, tips, and insights in real estate. Read expert blogs curated by SKD PropWorld."
+          content="Expert real estate blogs by the best real estate agents in Greater Noida and YEIDA. Get property tips, investment insights, and market updates."
         />
       </Helmet>
       <Navbar />
       <div className="userblog-container">
-        <h1 className="userblog-heading">Latest Real Estate Blogs & Insights</h1>
+        <h1 className="userblog-heading">Real Estate Blogs by the Best Real Estate Agents in Greater Noida & YEIDA</h1>
+        
+        {/* Intro paragraph for SEO */}
+        <div style={{ 
+          maxWidth: '900px', 
+          margin: '0 auto 40px', 
+          padding: '0 20px',
+          textAlign: 'center',
+          fontSize: '1.1rem',
+          lineHeight: '1.8',
+          color: '#555'
+        }}>
+          <p>
+            Welcome to the SKD Propworld blog, where we share expert insights, market updates, and investment guides from the best real estate agents in Greater Noida and YEIDA. Our blogs cover residential plots, commercial properties, and long-term investment opportunities to help buyers make informed decisions.
+          </p>
+          
+          {/* Internal linking with keyword-rich anchor text */}
+          <div style={{ 
+            marginTop: '25px', 
+            fontSize: '1rem',
+            textAlign: 'left',
+            maxWidth: '800px',
+            margin: '25px auto 0'
+          }}>
+            <p style={{ marginBottom: '10px' }}>
+              📖 <strong>Featured Reads:</strong>
+            </p>
+            <ul style={{ 
+              listStyle: 'none', 
+              padding: 0,
+              lineHeight: '2'
+            }}>
+              <li>
+                → Read our detailed guide by the <a href="/about-us" style={{ color: '#0066cc', textDecoration: 'underline' }}>best real estate agents in YEIDA</a> on plot investment opportunities.
+              </li>
+              <li>
+                → Insights from the <a href="/about-us" style={{ color: '#0066cc', textDecoration: 'underline' }}>best real estate agents in Greater Noida</a> on upcoming projects.
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {loading && (
           <div style={{ textAlign: 'center', padding: '40px' }}>
