@@ -52,60 +52,106 @@ const Services = () => {
       </Helmet>
 
       <Navbar />
-      <div className="container-fluid  text-white py-5">
+      <div className="container-fluid text-white py-5">
         <div className="container text-center">
-          <h1 className="mb-5">Our Real Estate Services - Buy, Sell & Consult</h1>
+          <h1 className="mb-3">Our Real Estate Services in Greater Noida</h1>
+          <p className="lead mb-5 text-white" style={{ maxWidth: '800px', margin: '0 auto 3rem' }}>
+            Comprehensive real estate solutions from the best real estate agents in Greater Noida & YEIDA
+          </p>
 
-          <div className="row justify-content-center">
-            {/* Sell Property */}
-            <div className="col-md-4 mb-4">
-              <div className="p-4 border border-light rounded shadow-sm h-100 text-white bg-white">
-                <div className="mb-3">
-                  <i className="bi bi-cash-coin fs-1 text-primary"></i>
-                </div>
-                <h4 className="text-dark">Sell Your Property</h4>
-                <p className="text-dark">
-                  Sell your properties by listing on multiple platforms,
-                  marketing to potential buyers, and handling negotiations to
-                  get the best deal.
-                </p>
-                <Link to="/" className="btn btn-outline-dark">
-                  Sell Property
-                </Link>
-              </div>
-            </div>
-
-            {/* Buy Property */}
-            <div className="col-md-4 mb-4 ">
-              <div className="p-4 border border-light rounded shadow-sm h-100 text-white bg-white">
+          <div className="row justify-content-center g-4">
+            {/* Residential Plots */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
                 <div className="mb-3">
                   <i className="bi bi-house-door fs-1 text-success"></i>
                 </div>
-                <h4 className="text-dark">Buy Real Estate</h4>
+                <h3 className="text-dark h4">Residential Plots in Greater Noida</h3>
                 <p className="text-dark">
-                  Assistance in purchasing properties for investment,
-                  residential living, or rental purposes with trusted guidance
-                  throughout.
+                  Verified residential plots in prime locations for home buyers and investors. We offer YEIDA-approved plots with clear documentation and excellent connectivity.
                 </p>
-                <Link to="/" className="btn btn-outline-dark">
-                  Buy Property
+                <Link to="/projects?nature=Residential" className="btn btn-outline-dark">
+                  View Residential Plots
                 </Link>
               </div>
             </div>
 
-            {/* Real Estate Consulting */}
-            <div className="col-md-4 mb-4">
+            {/* Commercial Properties */}
+            <div className="col-md-6 col-lg-4 mb-4">
               <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
                 <div className="mb-3">
-                  <i className="bi bi-bar-chart-line fs-1 text-warning "></i>
+                  <i className="bi bi-building fs-1 text-primary"></i>
                 </div>
-                <h4 className="text-dark">Real Estate Consulting</h4>
+                <h3 className="text-dark h4">Commercial Properties in YEIDA</h3>
                 <p className="text-dark">
-                  We provide expert consulting on market analysis, property
-                  valuation, and strategic investment opportunities.
+                  High-return commercial spaces suitable for long-term growth. Ideal for businesses looking to establish presence in the rapidly developing YEIDA region.
                 </p>
-                <Link to="/" className="btn btn-outline-dark">
+                <Link to="/projects?nature=Commercial" className="btn btn-outline-dark">
+                  View Commercial Properties
+                </Link>
+              </div>
+            </div>
+
+            {/* YEIDA Approved Plots */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
+                <div className="mb-3">
+                  <i className="bi bi-patch-check fs-1 text-success"></i>
+                </div>
+                <h3 className="text-dark h4">YEIDA Approved Plots</h3>
+                <p className="text-dark">
+                  Government-approved plots with clear documentation. All our YEIDA plots come with verified titles and are ready for immediate investment or construction.
+                </p>
+                <Link to="/projects" className="btn btn-outline-dark">
+                  View YEIDA Plots
+                </Link>
+              </div>
+            </div>
+
+            {/* Property Investment Consultation */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
+                <div className="mb-3">
+                  <i className="bi bi-bar-chart-line fs-1 text-warning"></i>
+                </div>
+                <h3 className="text-dark h4">Property Investment Consultation</h3>
+                <p className="text-dark">
+                  Personalized guidance for smart real estate investments. Our experts analyze market trends and help you make informed decisions for maximum returns.
+                </p>
+                <Link to="/contact-us" className="btn btn-outline-dark">
                   Get Consultation
+                </Link>
+              </div>
+            </div>
+
+            {/* Real Estate Advisory */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
+                <div className="mb-3">
+                  <i className="bi bi-people fs-1 text-info"></i>
+                </div>
+                <h3 className="text-dark h4">Real Estate Advisory Services</h3>
+                <p className="text-dark">
+                  End-to-end support from site visit to final possession. We handle documentation, legal verification, registration, and post-sale support.
+                </p>
+                <Link to="/contact-us" className="btn btn-outline-dark">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+
+            {/* Sell Property */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
+                <div className="mb-3">
+                  <i className="bi bi-cash-coin fs-1 text-danger"></i>
+                </div>
+                <h3 className="text-dark h4">Sell Your Property</h3>
+                <p className="text-dark">
+                  List your property with us and reach thousands of potential buyers. We handle marketing, negotiations, and paperwork to get you the best deal.
+                </p>
+                <Link to="/contact-us" className="btn btn-outline-dark">
+                  Sell Property
                 </Link>
               </div>
             </div>

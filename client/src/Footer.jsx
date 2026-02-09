@@ -192,6 +192,10 @@ const Footer = () => {
                 7th & 8th Floor,Kaisons, Alpha Square, Alpha 1 Commercial Belt,
                 Greater Noida, Uttar Pradesh, 201308, India
               </p>
+              <p className="text-light mb-2" style={{ fontSize: '0.95rem', fontStyle: 'italic' }}>
+                <i className="bi bi-pin-map-fill text-warning me-2" />
+                Serving Greater Noida, YEIDA, and nearby areas.
+              </p>
               <a
                 href="https://g.co/kgs/3ErcQyb"
                 target="_blank"
