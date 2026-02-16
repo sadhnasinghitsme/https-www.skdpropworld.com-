@@ -118,9 +118,18 @@ const FAQ = () => {
       </div>
       
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <h3>Still have questions?</h3>
-        <p>Contact our support team for more information</p>
-        <a href="/contact" className="contact-button">Contact Us</a>
+        <h3 style={{ color: '#ffffff', fontSize: '1.8rem', marginBottom: '1rem' }}>Still have questions?</h3>
+        <p style={{ color: '#e2e8f0', fontSize: '1.1rem', marginBottom: '1.5rem' }}>Contact our support team for more information</p>
+        <a href="/contact-us" className="contact-button" style={{ 
+          display: 'inline-block',
+          padding: '12px 30px',
+          background: '#ffc107',
+          color: '#000',
+          textDecoration: 'none',
+          borderRadius: '5px',
+          fontWeight: '600',
+          fontSize: '1rem'
+        }}>Contact Us</a>
       </div>
     </div>
   );

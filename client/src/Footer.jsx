@@ -205,6 +205,18 @@ const Footer = () => {
                 <i className="bi bi-geo-alt me-1" />
                 View On Google Map
               </a>
+              <div className="mt-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.28070678401!2d77.50728227423008!3d28.470347575753685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceb013449a75f%3A0xd91a4510cbf6f67d!2sSKD%20PROPWORLD%20PRIVATE%20LIMITED!5e1!3m2!1sen!2sin!4v1771234818080!5m2!1sen!2sin"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0, borderRadius: '8px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="SKD Propworld Office Location"
+                />
+              </div>
               <br />
             </div>
 

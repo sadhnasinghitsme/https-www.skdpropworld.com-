@@ -160,7 +160,7 @@ const Navbar = () => {
               {/* ------------- */}
               {[
                 ["Maps", "/maps"],
-                // ["Services", "/services"],
+                ["Services", "/services"],
                 ["Blogs", "/all-blogs"],
                 ["FAQ", "/faq"],
                 ["Gallery", "/view-gallery"],

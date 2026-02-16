@@ -194,15 +194,26 @@ const PublicInventory = () => {
   return (
     <>
       <Helmet>
-        <title>Available Plots & Properties | SKD PropWorld Inventory</title>
+        <title>Best Real Estate Agents in Greater Noida | Property Inventory – SKD Prop World</title>
         <meta
           name="description"
-          content="Browse available YEIDA plots and properties. Find registered and unregistered plots in various sectors with detailed information and pricing."
+          content="Browse verified plots & properties with the best real estate agents in Greater Noida. Residential & commercial listings with expert consultation."
         />
         <meta
           name="keywords"
           content="YEIDA plots, available properties, registered plots, unregistered plots, real estate inventory, SKD PropWorld"
         />
+        
+        {/* Local Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "SKD Prop World",
+            "areaServed": "Greater Noida",
+            "url": "https://www.skdpropworld.com/inventory"
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
@@ -211,10 +222,34 @@ const PublicInventory = () => {
         <div className="container py-5">
           {/* Header Section */}
           <div className="text-center mb-5">
-            <h1 className="display-4 fw-bold text-primary mb-3">
-              {settings.pageTitle}
+            <h1 className="fw-bold text-primary mb-3" style={{ fontSize: '2rem' }}>
+              Best Real Estate Agents in Greater Noida – Verified Property Inventory
             </h1>
-            <p className="lead text-muted">
+            
+            {/* SEO-rich intro content */}
+            <div className="intro-content" style={{ 
+              maxWidth: '900px', 
+              margin: '0 auto', 
+              textAlign: 'left',
+              fontSize: '0.9rem',
+              lineHeight: '1.6',
+              color: '#666'
+            }}>
+              <p style={{ marginBottom: '12px' }}>
+                Looking for the best real estate agents in Greater Noida? <a href="/about-us" style={{ color: '#0066cc', textDecoration: 'underline' }}>SKD Prop World</a> provides verified residential and commercial properties across Greater Noida, YEIDA sectors, and Yamuna Expressway.
+              </p>
+              <p style={{ marginBottom: '12px' }}>
+                We help buyers and investors find legally clear plots, apartments, villas, and commercial spaces with transparent pricing and complete documentation. Our experienced property consultants assist with site visits, negotiations, and registration for a smooth buying process.
+              </p>
+              <p style={{ marginBottom: '12px' }}>
+                Whether you are searching for affordable plots or premium investment opportunities near Jewar Airport, our regularly updated inventory offers genuine listings backed by local market expertise. As a trusted real estate agency in Greater Noida, we focus on long-term client satisfaction and honest property guidance.
+              </p>
+              <p style={{ marginBottom: '12px' }}>
+                Browse our latest property listings below or <a href="/contact-us" style={{ color: '#0066cc', textDecoration: 'underline' }}>contact our property experts</a> for personalized assistance. Learn more <a href="/about-us" style={{ color: '#0066cc', textDecoration: 'underline' }}>about SKD Prop World</a> and our commitment to excellence.
+              </p>
+            </div>
+            
+            <p className="lead text-muted mt-4">
               {settings.pageSubtitle}
             </p>
           </div>
@@ -341,8 +376,13 @@ const PublicInventory = () => {
 
           {/* Inventory Grid */}
           {!loading && !error && filteredInventories.length > 0 && (
-            <div className="row">
-              {filteredInventories.map((inventory) => (
+            <>
+              <h2 className="text-center mb-4" style={{ fontSize: '2rem', fontWeight: '600', color: '#333' }}>
+                Property Listings by Trusted Real Estate Agents in Greater Noida
+              </h2>
+              
+              <div className="row">
+                {filteredInventories.map((inventory) => (
                 <div key={inventory._id} className="col-lg-4 col-md-6 mb-4">
                   <div className="card h-100 shadow-sm inventory-card">
                     {inventory.image?.url && (
@@ -402,6 +442,7 @@ const PublicInventory = () => {
                 </div>
               ))}
             </div>
+            </>
           )}
         </div>
       </div>

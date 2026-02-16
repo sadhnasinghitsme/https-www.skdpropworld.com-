@@ -63,13 +63,9 @@ const Homepage = () => {
 
   // Lazy load video after initial page load - OPTIMIZED
   useEffect(() => {
-    // Only load video on desktop and after 2 seconds
+    // Load video immediately on desktop
     if (!isMobile) {
-      const timer = setTimeout(() => {
-        setShouldLoadVideo(true);
-      }, 2000); // Increased delay to let page load first
-      
-      return () => clearTimeout(timer);
+      setShouldLoadVideo(true);
     }
   }, [isMobile]);
 
@@ -431,8 +427,6 @@ const Homepage = () => {
               muted
               loop
               playsInline
-              preload="none"
-              poster="/hero-poster.jpg"
               style={{
                 position: 'absolute',
                 top: '50%',
@@ -446,7 +440,7 @@ const Homepage = () => {
                 objectFit: 'cover'
               }}
             >
-              <source src="/videos/hero-video-compressed.mp4" type="video/mp4" />
+              <source src="/videos/video.mp4" type="video/mp4" />
             </video>
           )}
           
@@ -463,60 +457,84 @@ const Homepage = () => {
           <div style={{ 
             position: 'relative', 
             zIndex: 2,
-            padding: '150px 20px',
+            padding: '0 20px',
             textAlign: 'center',
-            color: 'white'
+            color: 'white',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '600px'
           }}>
             {/* Primary, single H1 for homepage */}
-            <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>
+            <h1 style={{ 
+              fontSize: '1.8rem', 
+              fontWeight: '600', 
+              marginBottom: '25px',
+              letterSpacing: '0.5px',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+            }}>
               Top Real Estate Agents in Greater Noida - SKD Propworld
             </h1>
-            <p style={{ fontSize: '1.5rem', marginBottom: '20px' }}>
-              SKD Prop World works as a best real estate agent and property consultant in Greater Noida,
-              assisting clients with residential and commercial property transactions,
-              including YEIDA plot investments.
-            </p>
-            <p style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-              We provide professional <a href="/services" style={{ color: '#ffc107', textDecoration: 'underline' }}>real estate consultation services</a> for buyers and investors in Greater Noida.
-              Have questions? Check our <a href="https://www.skdpropworld.com/faq" style={{ color: '#ffc107', textDecoration: 'underline' }}>FAQ</a> to learn why we're the top choice for YEIDA properties.
-            </p>
+            
             <a href="/projects" style={{
               background: '#ffc107',
               color: '#000',
-              padding: '15px 40px',
-              fontSize: '1.2rem',
+              padding: '12px 35px',
+              fontSize: '1.1rem',
               borderRadius: '50px',
               textDecoration: 'none',
               fontWeight: 'bold',
               display: 'inline-block'
-            }}>View Project</a>
+            }}>View Projects</a>
           </div>
         </div>
 
         {/* Trust Line Section - Right after hero */}
         <section style={{
           background: '#f8f9fa',
-          padding: '40px 20px',
+          padding: '50px 20px',
           textAlign: 'center',
           borderBottom: '1px solid #e9ecef'
         }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <h2 style={{
-              fontSize: '2.2rem',
+              fontSize: '2rem',
               fontWeight: 'bold',
               color: '#1a365d',
-              marginBottom: '15px'
+              marginBottom: '20px'
             }}>
               Real Estate Solutions You Can Trust
             </h2>
-            <p style={{
-              fontSize: '1.2rem',
-              color: '#4a5568',
-              margin: '0',
-              lineHeight: '1.6'
+            
+            {/* Moved descriptive content here for cleaner hero */}
+            <div style={{ 
+              maxWidth: '900px', 
+              margin: '0 auto',
+              fontSize: '1rem',
+              lineHeight: '1.7',
+              color: '#555',
+              textAlign: 'left'
             }}>
-              Trusted by clients as one of the <strong>top real estate agents in Greater Noida & YEIDA</strong> for residential and commercial investments.
-            </p>
+              <p style={{ marginBottom: '15px' }}>
+                SKD Prop World works as a best real estate agent and property consultant in Greater Noida,
+                assisting clients with residential and commercial property transactions,
+                including YEIDA plot investments.
+              </p>
+              <p style={{ marginBottom: '15px' }}>
+                We provide professional <a href="/services" style={{ color: '#0066cc', textDecoration: 'underline' }}>real estate consultation services</a> for buyers and investors in Greater Noida.
+                Have questions? Check our <a href="https://www.skdpropworld.com/faq" style={{ color: '#0066cc', textDecoration: 'underline' }}>FAQ</a> to learn why we're the top choice for YEIDA properties.
+              </p>
+              <p style={{ 
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: '#1a365d',
+                textAlign: 'center',
+                marginTop: '25px'
+              }}>
+                Trusted by clients as one of the <strong>top real estate agents in Greater Noida & YEIDA</strong> for residential and commercial investments.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -907,46 +925,117 @@ const Homepage = () => {
 
 
 
-        <section id="map" style={{ padding: '40px 0', background: '#f8f9fa' }}>
+        <section id="why-choose" style={{ padding: '60px 0', background: '#f8f9fa' }}>
           <Container>
-            <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>YEIDA Map Overview</h2>
-            <div style={{ 
-              width: '100%', 
-              height: '400px', 
-              borderRadius: '8px',
-              overflow: 'hidden',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              position: 'relative'
-            }}>
-              <iframe
-                src="https://maps.google.com/maps?q=28.470602,77.509825&z=12&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="YEIDA Location Map"
-                onError={(e) => {
-                  console.error('Google Maps failed to load');
-                  e.target.style.display = 'none';
-                }}
-              ></iframe>
-            </div>
+            <h2 style={{ textAlign: 'center', marginBottom: '20px', fontSize: '2rem', fontWeight: '600' }}>
+              Why Choose SKD Propworld Pvt. Ltd.
+            </h2>
+            
             <p style={{ 
               textAlign: 'center', 
-              marginTop: '15px',
-              color: '#6c757d',
-              fontSize: '0.9rem'
+              maxWidth: '800px', 
+              margin: '0 auto 40px',
+              fontSize: '1rem',
+              lineHeight: '1.6',
+              color: '#555'
             }}>
-              <a 
-                href="https://www.google.com/maps/place/YEIDA,+Yamuna+Expressway,+Greater+Noida,+Uttar+Pradesh/@28.470602,77.509825,12z" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ color: '#3498db', textDecoration: 'none' }}
-              >
-                View on Google Maps →
-              </a>
+              Choosing the right real estate partner matters. At SKD Propworld Pvt. Ltd., a trusted real estate company in Greater Noida, we prioritize transparency, verified property information, and client-first guidance to ensure a safe and confident property experience.
             </p>
+
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '25px',
+              marginBottom: '40px'
+            }}>
+              {[
+                {
+                  icon: '✔',
+                  title: 'Verified & Authority-Approved Properties',
+                  desc: 'Every property is checked for approvals and documentation before recommendation.'
+                },
+                {
+                  icon: '✔',
+                  title: 'Strong Local Presence',
+                  desc: 'Active on-ground experience in Greater Noida and YEIDA regions.'
+                },
+                {
+                  icon: '✔',
+                  title: 'Transparent Process',
+                  desc: 'Clear pricing, honest advice, no hidden charges.'
+                },
+                {
+                  icon: '✔',
+                  title: 'End-to-End Assistance',
+                  desc: 'Support from site visit to registry and post-sale coordination.'
+                },
+                {
+                  icon: '✔',
+                  title: 'Investment-Focused Guidance',
+                  desc: 'Recommendations based on long-term value, not pressure selling.'
+                },
+                {
+                  icon: '✔',
+                  title: 'Professional & Ethical Team',
+                  desc: 'Process-driven, responsive, and accountable approach.'
+                }
+              ].map((item, idx) => (
+                <div key={idx} style={{
+                  background: '#fff',
+                  padding: '25px',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s ease',
+                  cursor: 'default'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                >
+                  <div style={{ fontSize: '2rem', color: '#28a745', marginBottom: '10px' }}>
+                    {item.icon}
+                  </div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '10px', color: '#333' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', lineHeight: '1.5', color: '#666', margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ 
+              textAlign: 'center', 
+              fontSize: '1rem',
+              fontStyle: 'italic',
+              color: '#555',
+              marginBottom: '25px'
+            }}>
+              🤝 Our approach is built on clarity, consistency, and long-term relationships with clients.
+            </p>
+
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '1rem', marginBottom: '15px', color: '#333' }}>
+                📞 <strong>Contact SKD Propworld</strong> – For site visit, pricing, and documentation support, reach out to the experts at SKD Propworld.
+              </p>
+              <a 
+                href="/contact-us" 
+                style={{
+                  display: 'inline-block',
+                  padding: '12px 30px',
+                  background: '#ffc107',
+                  color: '#000',
+                  textDecoration: 'none',
+                  borderRadius: '5px',
+                  fontWeight: '600',
+                  transition: 'background 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.target.style.background = '#ffb300'}
+                onMouseLeave={(e) => e.target.style.background = '#ffc107'}
+              >
+                Contact Us Today
+              </a>
+            </div>
           </Container>
         </section>
 

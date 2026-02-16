@@ -66,9 +66,9 @@ const Services = () => {
                 <div className="mb-3">
                   <i className="bi bi-house-door fs-1 text-success"></i>
                 </div>
-                <h3 className="text-dark h4">Residential Plots in Greater Noida</h3>
+                <h3 className="text-dark h4">Residential Plots in YEIDA </h3>
                 <p className="text-dark">
-                  Verified residential plots in prime locations for home buyers and investors. We offer YEIDA-approved plots with clear documentation and excellent connectivity.
+                  Verified residential plots in prime locations for home buyers and investors. We offer YEIDA-approved plots in Graeter Noida with clear documentation and excellent connectivity.
                 </p>
                 <Link to="/projects?nature=Residential" className="btn btn-outline-dark">
                   View Residential Plots
@@ -82,7 +82,7 @@ const Services = () => {
                 <div className="mb-3">
                   <i className="bi bi-building fs-1 text-primary"></i>
                 </div>
-                <h3 className="text-dark h4">Commercial Properties in YEIDA</h3>
+                <h3 className="text-dark h4"> Semi-Commercial Properties in YEIDA</h3>
                 <p className="text-dark">
                   High-return commercial spaces suitable for long-term growth. Ideal for businesses looking to establish presence in the rapidly developing YEIDA region.
                 </p>
@@ -152,6 +152,22 @@ const Services = () => {
                 </p>
                 <Link to="/contact-us" className="btn btn-outline-dark">
                   Sell Property
+                </Link>
+              </div>
+            </div>
+
+            {/* Industrial Plots */}
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className="p-4 border border-light rounded shadow-sm h-100 bg-white">
+                <div className="mb-3">
+                  <i className="bi bi-gear-fill fs-1 text-secondary"></i>
+                </div>
+                <h3 className="text-dark h4">Industrial Plots in YEIDA</h3>
+                <p className="text-dark">
+                  Premium YEIDA-approved industrial plots for factories, warehouses, and logistics businesses. Strategically located near Yamuna Expressway and Jewar Airport with high appreciation potential.
+                </p>
+                <Link to="/projects?nature=Industrial" className="btn btn-outline-dark">
+                  View Industrial Plots
                 </Link>
               </div>
             </div>
