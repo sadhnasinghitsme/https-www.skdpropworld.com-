@@ -128,7 +128,7 @@ const ViewYouTubeSeries = () => {
   return (
     <section className="youtube-series-section py-5" style={{ backgroundColor: '#f8f9fa' }}>
       <Helmet>
-        <title>Unlocking Real Estate | SKD Prop World</title>
+        {/* Title removed - using parent page title */}
         <meta name="description" content="Watch our YouTube series on real estate investment and market trends" />
       </Helmet>
       
