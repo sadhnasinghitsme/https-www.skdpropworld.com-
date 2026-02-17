@@ -230,12 +230,11 @@ const AllProjectsPage = () => {
     <>
       <Helmet>
         <title>
-          All Property Projects in YEIDA, Noida, Greater Noida, Delhi &
-          Ghaziabad
+          Plots in YEIDA & Greater Noida | SKD Propworld
         </title>
         <meta
           name="description"
-          content="Explore a wide range of residential, commercial, and industrial property projects in YEIDA, Noida, Greater Noida, Delhi, and Ghaziabad."
+          content="Explore a wide range of residential, semi-commercial, and industrial property projects in YEIDA, Noida, Greater Noida, Delhi, and Ghaziabad."
         />
         <meta
           property="og:title"
@@ -283,6 +282,39 @@ const AllProjectsPage = () => {
       </div>
 
       <div className="container-fluid py-5" style={{ position: 'relative', zIndex: 1 }}>
+        {/* H1 Heading */}
+        <div className="row mb-4">
+          <div className="col-12 text-center">
+            <h1 style={{ 
+              color: '#ffffff', 
+              fontSize: '2.5rem', 
+              fontWeight: '600',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+              marginBottom: '1rem'
+            }}>
+              Plots in YEIDA & Greater Noida
+            </h1>
+            <div style={{
+              maxWidth: '900px',
+              margin: '0 auto',
+              padding: '20px',
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+            }}>
+              <p style={{ 
+                color: '#333', 
+                fontSize: '1rem', 
+                lineHeight: '1.7',
+                marginBottom: '0',
+                textAlign: 'left'
+              }}>
+                SKD Propworld Pvt. Ltd. is a trusted real estate consultancy based in Greater Noida, specializing in authority-approved YEIDA residential, semi-commercial, and industrial plots. We offer verified plot options with complete transparency and legal support. Our YEIDA plots are located near key developments such as the Noida International Airport (Jewar), International Film City, major industrial corridors, and the Yamuna Expressway, making them ideal for investment and end-use. As one of the best plot dealers and real estate consultants in Greater Noida for YEIDA plots, SKD Propworld provides end-to-end support, including site visits, pricing guidance, and documentation assistance.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="row">
           {/* Sidebar */}
           <div className="col-md-3 mb-4">
@@ -466,7 +498,7 @@ const AllProjectsPage = () => {
                       />
 
                       <Card.Body className="d-flex flex-column">
-                        <h5 className="fw-bold">{p.heading}</h5>
+                        <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem' }}>{p.heading}</h2>
 
                         <Card.Text className="mb-1">
                           📍 <strong>Location:</strong> {p.location}
@@ -599,7 +631,7 @@ const AllProjectsPage = () => {
                       />
 
                       <Card.Body className="d-flex flex-column">
-                        <h5 className="fw-bold">{p.heading}</h5>
+                        <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem' }}>{p.heading}</h2>
 
                         <Card.Text className="mb-1">
                           📍 <strong>Location:</strong> {p.location}
@@ -710,3 +742,4 @@ const AllProjectsPage = () => {
 };
 
 export default AllProjectsPage;
+

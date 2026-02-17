@@ -65,7 +65,7 @@ const AboutUs = () => {
                 <strong>SKD Propworld</strong> is one of the trusted real estate consultants in Greater Noida and YEIDA, 
                 providing professional property consultancy services for residential and commercial projects. We specialize 
                 in helping clients buy, sell, and invest in the best properties across Greater Noida and Yamuna 
-                Expressway Industrial Development Authority (YEIDA) areas.
+                Expressway Industrial Development Authority (YEIDA) areas. Browse our <a href="/projects" style={{ color: '#ffc107', textDecoration: 'underline' }}>plots in YEIDA & Greater Noida</a> to find your ideal investment.
               </p>
 
               <h3 className="fw-bold text-warning mt-4 mb-3">Our Mission</h3>

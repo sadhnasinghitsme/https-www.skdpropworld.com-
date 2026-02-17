@@ -104,7 +104,7 @@ const ViewBlogGrid = () => {
           color: '#555'
         }}>
           <p>
-            Welcome to the SKD Propworld blog, where we share expert insights, market updates, and investment guides from the best real estate agents in Greater Noida and YEIDA. Our blogs cover residential plots, commercial properties, and long-term investment opportunities to help buyers make informed decisions.
+            Welcome to the SKD Propworld blog, where we share expert insights, market updates, and investment guides from the best real estate agents in Greater Noida and YEIDA. Our blogs cover residential plots, commercial properties, and long-term investment opportunities to help buyers make informed decisions. Explore our complete portfolio of <a href="/projects" style={{ color: '#0066cc', textDecoration: 'underline' }}>plots in YEIDA & Greater Noida</a>.
           </p>
           
           {/* Internal linking with keyword-rich anchor text */}

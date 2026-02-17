@@ -280,7 +280,7 @@ const Homepage = () => {
       <Helmet>
         {/* Primary Meta Tags */}
         <title>
-          SKD PropWorld | Real Estate Agent in Greater Noida & YEIDA
+          Real Estate Agent in Greater Noida & YEIDA | SKD PropWorld
         </title>
 
         <meta
@@ -519,7 +519,7 @@ const Homepage = () => {
               <p style={{ marginBottom: '15px' }}>
                 SKD Prop World works as a best real estate agent and property consultant in Greater Noida,
                 assisting clients with residential and commercial property transactions,
-                including YEIDA plot investments.
+                including YEIDA plot investments. Explore our <a href="/projects" style={{ color: '#0066cc', textDecoration: 'underline' }}>plots in YEIDA & Greater Noida</a>.
               </p>
               <p style={{ marginBottom: '15px' }}>
                 We provide professional <a href="/services" style={{ color: '#0066cc', textDecoration: 'underline' }}>real estate consultation services</a> for buyers and investors in Greater Noida.
