@@ -1,5 +1,5 @@
 // src/pages/AllProjectsPage.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import axios from "axios";
 import { Card, Button, Form } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
@@ -13,6 +13,21 @@ import "./AllProjectsPage.css";
 
 /* ──────────── config / constants (top‑level) ──────────── */
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
+// Debounce utility for better INP
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () => clearTimeout(handler);
+  }, [value, delay]);
+  
+  return debouncedValue;
+};
 
 // 🎨 ribbonTag → gradient class & icon
 export const TAG_META = {
@@ -60,6 +75,7 @@ const AllProjectsPage = () => {
   /* state */
   const [projects, setProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 300); // 300ms debounce for better INP
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedRibbon, setSelectedRibbon] = useState("");
@@ -133,7 +149,7 @@ const AllProjectsPage = () => {
   }, [location.search]);
 
   /* derived list */
-  const tokens = getTokens(searchTerm);
+  const tokens = getTokens(debouncedSearchTerm); // Use debounced value for better INP
   const filtered = projects
     // 🔍 Search by heading or location only
     .filter((p) => {

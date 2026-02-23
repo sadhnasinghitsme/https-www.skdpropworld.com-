@@ -9,16 +9,35 @@ export default defineConfig({
     assetsDir: "assets",
     minify: "esbuild",
     sourcemap: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           bootstrap: ['react-bootstrap', 'bootstrap'],
-          utils: ['axios', 'moment']
-        }
+          utils: ['axios'],
+          helmet: ['react-helmet-async']
+        },
+        // Optimize asset naming for better caching
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          } else if (/woff|woff2|eot|ttf|otf/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 500,
+    // Enable compression
+    reportCompressedSize: true,
+    // Optimize CSS
+    cssMinify: true,
   },
   server: {
     port: 5173,
@@ -33,7 +52,8 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: ['react', 'react-dom', 'react-router-dom', 'react-bootstrap'],
+    exclude: ['moment'] // Remove moment if not used
   }
 });
 

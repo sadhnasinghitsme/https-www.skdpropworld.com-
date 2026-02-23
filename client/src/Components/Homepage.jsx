@@ -412,15 +412,15 @@ const Homepage = () => {
       <div className="homepage-hero">
         <Navbar />
         
-        {/* YEIDA Hero Section with Video Background - OPTIMIZED */}
+        {/* YEIDA Hero Section with Video/Image Background - OPTIMIZED */}
         <div style={{ 
           position: 'relative', 
-          minHeight: '600px', 
+          minHeight: isMobile ? '500px' : '600px', 
           width: '100%',
           overflow: 'hidden',
           background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)'
         }}>
-          {/* Optimized video loading - Desktop only, delayed load, with poster */}
+          {/* Desktop: Video Background */}
           {!isMobile && shouldLoadVideo && (
             <video
               autoPlay
@@ -442,6 +442,31 @@ const Homepage = () => {
             >
               <source src="/videos/video.mp4" type="video/mp4" />
             </video>
+          )}
+          
+          {/* Mobile: Static Banner Image */}
+          {isMobile && (
+            <picture style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 0
+            }}>
+              {/* Mobile banner image */}
+              <img 
+                src="/WhatsApp Image 2026-02-23 at 10.19.48 AM.jpeg" 
+                alt="SKD Propworld - Real Estate in Greater Noida"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center'
+                }}
+                loading="eager"
+              />
+            </picture>
           )}
           
           <div style={{

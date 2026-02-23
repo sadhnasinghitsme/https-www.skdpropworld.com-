@@ -20,7 +20,7 @@ body {
 
 /* ===========  NAVBAR  =========== */
 .skd-navbar {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem for better mobile readability */
   letter-spacing: 0.4px;
   top: 0;
   z-index: 1030;
@@ -42,8 +42,8 @@ body {
   }
 
   .skd-menu-item {
-    font-size: 0.6rem; /* Smaller font */
-    padding: 4px 6px; /* Less padding */
+    font-size: 0.875rem; /* Increased from 0.6rem - minimum 14px for mobile */
+    padding: 8px 10px; /* Increased padding for better tap targets */
     white-space: nowrap; /* Keep text in one line */
   }
 
@@ -357,4 +357,74 @@ html {
 /* Prevent injection of external popups */
 script + * {
   display: none !important;
+}
+
+
+/* ========== MOBILE USABILITY FIXES ========== */
+@media (max-width: 768px) {
+  /* Ensure minimum font size for readability */
+  body {
+    font-size: 16px !important;
+    line-height: 1.6;
+  }
+  
+  /* Minimum button sizes for tap targets (48x48px minimum) */
+  button, .btn, a.btn {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+  }
+  
+  /* Input fields minimum size */
+  input, select, textarea {
+    min-height: 44px !important;
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+  
+  /* Links minimum tap target */
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Card text readability */
+  .card-text, p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Heading sizes */
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
+  h4 { font-size: 1.1rem !important; }
+  h5 { font-size: 1rem !important; }
+  
+  /* Spacing between interactive elements */
+  .btn + .btn,
+  button + button {
+    margin-left: 12px !important;
+  }
+  
+  /* Form spacing */
+  .form-group,
+  .mb-3 {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Navbar mobile improvements */
+  .navbar-nav .nav-link {
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+  }
+  
+  /* Dropdown items */
+  .dropdown-item {
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    min-height: 44px !important;
+  }
 }
