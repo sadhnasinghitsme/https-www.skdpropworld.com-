@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import html2pdf from "html2pdf.js";
 import { useRef } from "react";
@@ -20,6 +21,7 @@ import "./ControlProjects.css";
 import { Helmet } from "react-helmet-async";
 
 const ControlProjects = () => {
+  const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -294,9 +296,14 @@ const ControlProjects = () => {
       <div className="admin-control-projects-page container text-light py-4 ps-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h3 className="mb-0">All Projects 📂</h3>
-          <Button variant="outline-primary" onClick={fetchProjects}>
-            🔄 Refresh
-          </Button>
+          <div className="d-flex gap-2">
+            <Button variant="success" onClick={() => navigate("/admin/super-admin/itdept/addnew")}>
+              ➕ Add Project
+            </Button>
+            <Button variant="outline-primary" onClick={fetchProjects}>
+              🔄 Refresh
+            </Button>
+          </div>
         </div>
 
         <Form.Control
