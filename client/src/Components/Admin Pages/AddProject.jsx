@@ -11,10 +11,8 @@ import { Helmet } from "react-helmet-async";
 const secretFromEnv = import.meta.env.VITE_REACT_APP_SECRET || "";
 
 const AddProject = () => {
-  // State for secret login
-  const [secretInput, setSecretInput] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loginError, setLoginError] = useState("");
+  // State for secret login - bypassed, using admin auth instead
+  const [isAuthenticated] = useState(true);
   const [hasCelebrated, setHasCelebrated] = useState(false);
   const [submittedSlug, setSubmittedSlug] = useState("");
 
